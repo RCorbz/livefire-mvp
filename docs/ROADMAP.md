@@ -1,26 +1,26 @@
-# LiveFire Development Roadmap
+# LiveFire Roadmap
 
-## Phase 1: The "Digital Cardboard" (The MVP)
-*Goal: A deployable link that captures a phone number. No backend database yet.*
-- [ ] **1.1 Scaffold:** Create `index.html` with Tailwind CSS via CDN.
-- [ ] **1.2 Hero Card:** Build the "Joint Training Invite" UI (Dark mode, intense visuals).
-- [ ] **1.3 The Hook:** Implement the `acceptInvite()` JS function to trigger a browser `prompt()` for the phone number.
-- [ ] **1.4 Feedback:** Create the visual "Success State" (Button turns green, Confetti, or "Slot Locked").
-- [ ] **1.5 Deployment:** Deploy to Firebase Hosting (`livefire-mvp.web.app`).
+## Phase 1: The Hook (MVP)
+* **Goal:** Capture a lead.
+* **Features:** A single, deployable webpage (`livefire-mvp.web.app`) that presents a "Joint Training Invite." A coach can enter their phone number to "Accept" the invite. This is a frontend-only prototype to validate the core user interaction.
+* **Metric:** # of phone numbers captured.
 
-## Phase 2: The "Wizard of Oz" (Data Capture)
-*Goal: Actually save the phone numbers so we don't lose leads.*
-- [ ] **2.1 Firestore Setup:** Initialize Firebase SDK in `index.html`.
-- [ ] **2.2 Data Structure:** Create a `leads` collection.
-- [ ] **2.3 writeData Function:** Connect the "Claim" button to send `{ name, phone, timestamp }` to Firestore.
-- [ ] **2.4 Confirmation:** Replace the browser alert with a nice modal: "We will text you the field map."
+## Phase 2: The Viral Loop
+* **Goal:** Create a network effect.
+* **Features:** Integrate Twilio/Firebase Auth for OTP (One-Time Password) phone verification. When a coach accepts an invite, it generates a unique URL they can send to another coach. This creates a simple, shareable loop.
+* **Metric:** # of invites sent and accepted.
 
-## Phase 3: The "Trojan Horse" (Viral Loop)
-*Goal: Make the page dynamic so we can change the "Team Name" via URL.*
-- [ ] **3.1 URL Params:** Add logic to read `?team=Sparta` from the URL.
-- [ ] **3.2 Dynamic Injection:** Update the "VS" text to show the opponent's name automatically based on the link.
-- [ ] **3.3 The "Forward" Feature:** Add a "Share with Parents" button that copies the link.
+## Phase 3: The Marketplace
+* **Goal:** Build liquidity.
+* **Features:** Implement Firestore database to create a browsable list of available "Slots." Coaches can now see all open training opportunities, claim them, or post their own.
+* **Metric:** # of open slots filled.
 
-## Phase 4: The "App" Wrapper (Future)
-- [ ] **4.1 PWA:** Add `manifest.json` to make it installable on home screens.
-- [ ] **4.2 Auth:** Replace simple phone capture with Firebase Phone Auth (SMS OTP)
+## Phase 4: The PWA
+* **Goal:** Deepen engagement.
+* **Features:** Add a `manifest.json` file and a Service Worker to make the web app installable on a user's home screen. Implement offline capabilities (viewing cached slots) and push notifications for new challenges.
+* **Metric:** # of app installs and notification CTR.
+
+## Phase 5: The Native Shell (Conditional)
+* **Goal:** Address specific, high-demand needs that a PWA cannot fulfill.
+* **Trigger:** This phase will only be initiated if the product requires deep hardware integration (e.g., Bluetooth, NFC), hits extreme performance ceilings (e.g., 3D graphics), or if the primary business strategy shifts to an app-store-first model. See `docs/TECH_SPECS.md` for details.
+* **Features:** Wrap the existing web application in a native shell or migrate to a framework like React Native to access required native-only features.
