@@ -1,44 +1,36 @@
-# LiveFire Project Blueprint
+# LiveFire Blueprint
 
-## 1. Project Overview
+## 1. Project Overview & Vision
 
-**Purpose:** A web application to facilitate the scheduling of joint training sessions for sports teams. The initial view is an invitation card for a coach to claim an open slot for a training session.
+**Core Philosophy:** LiveFire is a High-Performance Logistics Network for youth sports, replacing low-ROI practices with high-intensity "Joint Training" sessions. Our goal is to sell "Game Speed," not just schedule matches.
 
-**Core Technologies:**
-- **Frontend:** HTML, CSS, JavaScript (ES Modules)
-- **Styling:** Tailwind CSS
-- **Components:** Web Components for reusable UI elements.
-- **Build Tool:** Vite (via npm scripts)
-- **Deployment:** Firebase Hosting
+**North Star Metrics:**
+1.  **Intensity:** All interactions must feel urgent, tactical, and high-stakes.
+2.  **Speed:** Zero friction, no logins, "Magic Links" only.
+3.  **Hyper-Local:** Focused on a specific geographic area to build network density.
 
-## 2. Implemented Features & Design
+**Brand Identity:**
+*   **Voice:** Tactical, Professional, Direct.
+*   **Visuals:** Dark Mode, Burnt Orange (`#FF4D00`), High Contrast.
 
-### Visual Design
-- **Color Palette:**
-  - Background: `black`
-  - Icons & Primary Actions: `gold`
-  - Text: `white`
-- **Typography:** `Inter` font family.
-- **Layout:** A centered card-based UI.
-- **Style:** Dark mode, with glowing effects on primary buttons and a "lifted" card appearance.
+## 2. Personas
 
-### Core Components
-- **Invitation Card:** A detailed card showing training session information (Date, Time, Location, Format).
-- **Team Matchup:** A visual representation of the host team vs. an open slot.
-- **"Claim Slot" Button:** The primary call-to-action.
+*   **The Grunt (Coach Mike):** Our primary user. Needs big, simple buttons for use on the field. Wants to easily set up high-quality training.
+*   **The Whale (Director Dave):** Needs oversight and control. Wants a dashboard to see his teams' activities.
+*   **The Skeptic (The Parent):** The end-consumer of information. Will *never* download an app. Needs immediate access to "Where?" and "When?" via a web link.
 
-### Functionality
-- **`acceptInvite()`:** A JavaScript function triggered by the main button that simulates claiming a slot by using a `prompt()` to ask for a phone number and then provides a confirmation alert.
+## 3. Design, Features & Style
 
-### UI Enhancements
--   **"Heating Up" Button Effect:**
-    -   **Description:** When a user hovers over the "CLAIM TRAINING SLOT" button, a dynamic flame animation appears, giving a "heating up" sensation.
-    -   **Implementation:**
-        -   A `flame-button` class was added to the button element in `src/index.html`.
-        -   `src/flames.css` was created to define the CSS animations for the flames. It uses a `radial-gradient` to create the flame effect and a `@keyframes` animation to make it rise and fade in.
-        -   `src/flames.js` was created to dynamically add and remove flame elements to the button on `mouseenter` and `mouseleave` events, creating a more dynamic and random flame effect.
-        -   The new CSS and JS files were linked in `src/index.html`.
+*   **UI/UX:** Mobile First, Dark Mode Default, One Action Per Screen, Heavy/Tactical feedback on interactions.
+*   **Stack:** HTML5, Tailwind CSS (via CDN), Vanilla JavaScript.
+*   **Data:** No user accounts or passwords. Phone number is the key identifier. Data stored in Firestore.
 
-## 3. Current Plan: Awaiting Next User Request
+## 4. Current Plan: Phase 1 (The MVP)
 
-**Goal:** The project structure has been refactored, and the "heating up" button effect has been implemented. I am now waiting for the next set of instructions from the user.
+*Goal: A deployable link that captures a phone number. No backend database yet.*
+
+*   [ ] **1.1 Scaffold:** Create `index.html` with Tailwind CSS via CDN.
+*   [ ] **1.2 Hero Card:** Build the "Joint Training Invite" UI (Dark mode, intense visuals).
+*   [ ] **1.3 The Hook:** Implement the `acceptInvite()` JS function to trigger a browser `prompt()` for the phone number.
+*   [ ] **1.4 Feedback:** Create the visual "Success State" (Button turns green, Confetti, or "Slot Locked").
+*   [ ] **1.5 Deployment:** Deploy to Firebase Hosting (`livefire-mvp.web.app`).
