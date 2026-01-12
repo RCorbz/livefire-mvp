@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveFire MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Note: We are defining the gold color here, but using Tailwind's default `yellow-400` and `yellow-500` for simplicity in the markup.
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'premium-gold': '#FACC15',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-slate-900 border border-slate-700 rounded-lg shadow-2xl p-8 max-w-sm w-full text-center">
+        <h1 class="text-2xl font-bold mb-2 text-white">JOINT TRAINING INVITE</h1>
+        <p class="text-slate-400 mb-6">You've been challenged to a high-intensity scrimmage.</p>
+        
+        <div class="bg-black rounded-lg p-4 mb-6">
+            <p class="text-lg font-semibold text-white">U14 Boys / Tier 1</p>
+            <p class="text-sm text-slate-500">Thursday, 7:30 PM</p>
+            <p class="text-sm text-slate-500">Northside Stadium</p>
+        </div>
+
+        <button id="acceptButton" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-3 px-6 rounded-lg w-full transition duration-300 ease-in-out transform hover:scale-105 shadow-[0_0_15px_rgba(250,204,21,0.5)]">
+            ACCEPT CHALLENGE
+        </button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
